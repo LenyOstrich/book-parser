@@ -41,3 +41,15 @@
   ├── ruff.toml
   └── scraper.py
   ```
+
+---
+
+## Пример использования
+
+```
+from scraper import scrape_books
+
+if __name__ == "__main__":
+    books = scrape_books(save=True)
+    print(f"Собрано {len(books)} книг.")
+```
