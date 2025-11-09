@@ -46,7 +46,7 @@
 
 ## Пример использования
 
-```
+```python
 from scraper import scrape_books
 
 if __name__ == "__main__":
