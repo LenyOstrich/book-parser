@@ -1,0 +1,30 @@
+line-length = 79
+extend-include = ["*.ipynb"]
+include = ["notebooks/*.ipynb"]
+
+[lint]
+select = ["ALL"]
+preview = true
+ignore = [
+    "COM812",  # missing-trailing-comma (отсутствует запятая в конце)
+    "CPY001",  # Missing copyright notice at top of file (отсутствует уведомление об авторских правах в начале файла)
+    "D203",    # blank line required before class docstring (требуется пустая строка перед строкой документации класса)
+    "D213",    # multi-line-summary-second-line (многострочное резюме - вторая строка)
+    "DTZ005",  # `datetime.datetime.now()` called without a `tz` argument (не указана таймзона для таймера)
+    "RUF002",  # docstring contains ambiguous letters (использование кириллических букв, похожих на латинские)
+    "T201"     # checks for print statements (замена print на logging)
+]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.per-file-ignores]
+"test_*.py" = [
+    "PLC2701", # private name import from external module (импорт нужен для тестирования)
+    "S101",    # asserts allowed in tests... (asserts разрешены в тестах...)
+]
+
+[format]
+indent-style = "space"
+quote-style = "double"
+skip-magic-trailing-comma = false
